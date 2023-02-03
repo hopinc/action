@@ -1,0 +1,21 @@
+name: "Deploy to Hop"
+description: "Deploy your project to hop.io using the Hop CLI"
+branding:
+  color: purple
+  icon: cloud
+inputs:
+  token:
+    description: "Personal token for your Hop account"
+    required: true
+  dir:
+    description: "Directory to deploy, defaults to current directory"
+    required: false
+    default: "."
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/deploy.sh
+      shell: bash
+      env:
+        HOP_TOKEN: ${{ inputs.token }}
+        DEPLOY_DIR: ${{ inputs.dir }}
