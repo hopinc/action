@@ -15,7 +15,7 @@ Deploy your app to [Hop](https://hop.io), using the Hop CLI.
 
 ```yaml
 name: Deploy to Hop
-uses: m1guelpf/hop-deploy@v1
+uses: hopinc/action@v1
 with:
   token: ${{ secrets.HOP_TOKEN }}
 ```
